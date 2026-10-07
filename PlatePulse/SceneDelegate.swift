@@ -44,6 +44,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let pushToken = ""
         if let saved = Alamofire.DataCache.shared.contentURL, !saved.isEmpty {
             finishLaunch(mode: .webContent, url: saved)
+            return
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
             Task { @MainActor in

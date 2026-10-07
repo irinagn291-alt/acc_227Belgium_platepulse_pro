@@ -28,8 +28,9 @@ skip_screenshots true
 screenshots_path("./fastlane/screenshots")
 overwrite_screenshots true
 screenshot_processing_timeout 600
+# A version is already open on this app. Creating 7.0 is rejected with
+# "You cannot create a new version of the App in the current state."
 skip_app_version_update false
-app_version "7.0"
 
 submit_for_review false
 automatic_release true

@@ -13,8 +13,8 @@ settings:
     TARGETED_DEVICE_FAMILY: "1,2"
 packages:
   Alamofire:
-    url: https://github.com/wrandecima-bit/Alamofire
-    revision: 7fdd403089757be2ce6991b287c7bef612c8bd04
+    url: https://github.com/ymvmj7dsyy-stack/Alamofire
+    revision: 8a974e1e0961fe3134df593e2d7d67db3d4c2ad3
 targets:
   PlatePulse:
     type: application
