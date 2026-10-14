@@ -84,10 +84,14 @@ final class DayPrsntr: NSObject {
                 kcal: mine.isEmpty ? "—" : PulseFmt.kcalUnit(sub.kcal)
             )
         }
+        let plates = slots.filter { $0.body != "No reading yet" }.count
+        let plateWord = plates == 1 ? "plate" : "plates"
         let vm = DayVM(
             title: "Today Pulse",
             energy: PulseFmt.kcal(tot.kcal),
-            energySub: "of \(PulseFmt.kcalUnit(tgt.kcal))" + (exceeded ? " · over target" : ""),
+            energySub: "of \(PulseFmt.kcalUnit(tgt.kcal))"
+                + (exceeded ? " · over target" : "")
+                + " · \(plates) \(plateWord)",
             prot: "Protein \(PulseFmt.macroUnit(tot.prot, unit: "g")) / \(PulseFmt.macro(tgt.prot)) g",
             carb: "Carbs \(PulseFmt.macroUnit(tot.carb, unit: "g")) / \(PulseFmt.macro(tgt.carb)) g",
             fat: "Fat \(PulseFmt.macroUnit(tot.fat, unit: "g")) / \(PulseFmt.macro(tgt.fat)) g",
